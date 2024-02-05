@@ -3,7 +3,7 @@
 Team:
 
 * Jen Dunsmore - Sales
-* Person 2 - Which microservice?
+* Christian Culajay - Services
 
 ## Design
 
