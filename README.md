@@ -2,8 +2,8 @@
 
 Team:
 
-* Person 1 - Which microservice?
-* Christian Culajay - Service
+* Jen Dunsmore - Sales
+* Person 2 - Which microservice?
 
 ## Design
 
