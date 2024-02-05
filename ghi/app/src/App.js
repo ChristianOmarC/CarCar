@@ -9,7 +9,11 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<MainPage />} />
-        </Routes>
+          <Route path="manufacturers" >
+            <Route path="" element={<Manufacturer />} />
+            <Route path="new" element={<ManufacturerForm />} />
+            </Route>
+          </Routes>
       </div>
     </BrowserRouter>
   );
