@@ -7,25 +7,11 @@ function ManufacturerForm() {
     name: '',
   })
 
-  // const fetchData = async () => {
-  //   const url = 'http://localhost:8100/api/manufacturers/';
-  //   const response = await fetch(url);
-  //   if (response.ok) {
-  //     const data = await response.json();
-  //     setManufacturers(data.manufacturers);
-  //   }
-  // }
-
   const handleFormChange = (event) => {
     const inputName = event.target.name;
     const value = event.target.value;
     setFormData({...formData,[inputName]:value});
   }
-
-  // useEffect(()=> {
-  //   fetchData();
-  // }, []);
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,8 +32,6 @@ function ManufacturerForm() {
 
   return (
       <div className="offset-3 col-6">
-        <div className="shadow p-4 mt-4">
-        </div>
           <h1 className="card-title">New Manufacturer</h1>
             <form onSubmit={handleSubmit} id="create-manufacturer-form">
               <div className="form-floating mb-3">
