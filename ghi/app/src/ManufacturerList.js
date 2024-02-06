@@ -6,6 +6,7 @@ function ManufacturerList() {
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:8100/api/manufacturers/');
+    console.log(response)
     if (response.ok) {
       const data = await response.json();
       setManufacturers(data.manufacturers);
@@ -21,7 +22,7 @@ function ManufacturerList() {
   const handleDelete = async (event) => {
     event.preventDefault()
     const id = event.target.dataset.id
-    const url = `http://localhost:8100/api/manufacturers/${id}/`
+    const url = await fetch(`http://localhost:8100/api/manufacturers/${id}/`)
     const fetchConfig = {method: 'DELETE'};
     const response = await fetch(url, fetchConfig)
     if (response.ok) {
@@ -32,30 +33,27 @@ function ManufacturerList() {
   };
 
 
-  return (
-    <div className="my-5 container">
-    <div className="row">
-      <h1>Manufacturer</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-            {manufacturers.map(manufacturer => {
-                return (
-                  <tr key={manufacturer.id}>
-                    <td>{manufacturer.name}</td>
-                    <td><button onClick={handleDelete} data-id={manufacturer.id} className='btn btn-danger'>Delete</button></td>
-                  </tr>
-                );
-             })}
-        </tbody>
-      </table>
-      </div>
-      </div>
-    );
+return (
+  <div className="my-5 container">
+    <table className="table"/>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody/>
+        {manufacturers.map(manufacturer => {
+          return (
+            <tr key={manufacturer.id}>
+              <td>{manufacturer.name}</td>
+              <td><button onClick={handleDelete} data-id={manufacturer.id} className='btn btn-danger'>Delete</button></td>
+            </tr>
+          );
+        })}
+      <tbody/>
+    <table/>
+  </div>
+);
 }
 export default ManufacturerList;

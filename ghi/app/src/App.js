@@ -1,12 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
-import ManufacturerForm from './ManufacturerForm';
 import ManufacturerList from './ManufacturerList';
-import VehicleList from './VehicleList';
-import VehicleForm from './VehicleForm'
-import AutomobileList from './AutomobileList';
-import AutomobileForm from './AutomobileForm'
+import ManufacturerForm from './ManufacturerForm';
 
 function App() {
   return (
