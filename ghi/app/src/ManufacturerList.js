@@ -6,7 +6,6 @@ function ManufacturerList() {
 
   const fetchData = async () => {
     const response = await fetch('http://localhost:8100/api/manufacturers/');
-    console.log(response)
     if (response.ok) {
       const data = await response.json();
       setManufacturers(data.manufacturers);
@@ -35,14 +34,16 @@ function ManufacturerList() {
 
 return (
   <div className="my-5 container">
-    <table className="table"/>
+    <div className="row">
+    <h1>Manufacturer</h1>
+    <table className="table table-striped">
       <thead>
         <tr>
           <th>Name</th>
           <th>Action</th>
         </tr>
       </thead>
-      <tbody/>
+      <tbody>
         {manufacturers.map(manufacturer => {
           return (
             <tr key={manufacturer.id}>
@@ -51,8 +52,9 @@ return (
             </tr>
           );
         })}
-      <tbody/>
-    <table/>
+      </tbody>
+    </table>
+    </div>
   </div>
 );
 }

@@ -3,6 +3,11 @@ import MainPage from './MainPage';
 import Nav from './Nav';
 import ManufacturerList from './ManufacturerList';
 import ManufacturerForm from './ManufacturerForm';
+import VehicleList from './VehicleList';
+import VehicleForm from './VehicleForm';
+import AutomobileList from './AutomobileList';
+import AutomobileForm from './AutomobileForm';
+
 
 function App() {
   return (
