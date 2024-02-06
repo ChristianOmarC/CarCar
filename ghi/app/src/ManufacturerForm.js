@@ -1,20 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 function ManufacturerForm() {
-  const [manufacturers, setManufacturers] = useState([]);
 
   const [formData, setFormData] = useState({
     name: '',
   })
-
-  // const fetchData = async () => {
-  //   const url = 'http://localhost:8100/api/manufacturers/';
-  //   const response = await fetch(url);
-  //   if (response.ok) {
-  //     const data = await response.json();
-  //     setManufacturers(data.manufacturers);
-  //   }
-  // }
 
   const handleFormChange = (event) => {
     const inputName = event.target.name;
@@ -22,9 +12,6 @@ function ManufacturerForm() {
     setFormData({...formData,[inputName]:value});
   }
 
-  // useEffect(()=> {
-  //   fetchData();
-  // }, []);
 
 
   const handleSubmit = async (event) => {
