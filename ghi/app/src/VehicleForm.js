@@ -36,7 +36,6 @@ function VehicleForm() {
     }
     
         const response = await fetch(url, fetchConfig)
-        console.log(response)
         
         if (response.ok) {
           setFormData({
