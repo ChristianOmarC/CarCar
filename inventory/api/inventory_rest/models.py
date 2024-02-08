@@ -12,7 +12,6 @@ class Manufacturer(models.Model):
 class VehicleModel(models.Model):
     name = models.CharField(max_length=100)
     picture_url = models.URLField()
-
     manufacturer = models.ForeignKey(
         Manufacturer,
         related_name="models",
@@ -28,7 +27,6 @@ class Automobile(models.Model):
     year = models.PositiveSmallIntegerField()
     vin = models.CharField(max_length=17, unique=True)
     sold = models.BooleanField(default=False)
-
     model = models.ForeignKey(
         VehicleModel,
         related_name="automobiles",

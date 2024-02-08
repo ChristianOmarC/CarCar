@@ -21,7 +21,7 @@ function ManufacturerList() {
   const handleDelete = async (event) => {
     event.preventDefault()
     const id = event.target.dataset.id
-    const url = await fetch(`http://localhost:8100/api/manufacturers/${id}/`)
+    const url = `http://localhost:8100/api/manufacturers/${id}/`
     const fetchConfig = {method: 'DELETE'};
     const response = await fetch(url, fetchConfig)
     if (response.ok) {
