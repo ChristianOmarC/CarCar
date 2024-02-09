@@ -36,7 +36,7 @@ CarCar has 3 microservices that interact with one another.
 
 ## Diagram
 
-![Alt text](image.png)
+![Alt text](image-2.png)
 
 ## Integration
 
