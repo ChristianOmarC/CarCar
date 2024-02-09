@@ -8,6 +8,8 @@ function AutomobileList() {
         if (response.ok) {
             const data = await response.json()
             setAutomobiles(data.autos)
+        } else {
+          alert('An error occurred while fetching the data');
         }
     }
 
@@ -23,6 +25,8 @@ function AutomobileList() {
         if (request.ok){
             const data = await request.json()
         fetchData()
+        } else {
+          alert('An error occurred while deleting the automobile');
         }
     }
     return (

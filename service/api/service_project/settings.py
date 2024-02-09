@@ -31,7 +31,7 @@ DEBUG = True
 
 INSTALLED_APPS = [
     "corsheaders",
-    "ServiceRestConfig",
+    "service_rest.apps.ServiceRestConfig",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +51,7 @@ MIDDLEWARE = [
 ]
 
 ALLOWED_HOSTS = [
-    "localhost",
+    "localhost", "inventory-api",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
@@ -122,7 +122,7 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
