@@ -35,7 +35,22 @@ function Nav() {
               <NavLink className="nav-link" aria-current="page" to="salespeople">Salespeople</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" aria-current="page" to="salesperson/new">New Salesperson</NavLink>
+              <NavLink className="nav-link" aria-current="page" to="salesperson/new">Add a Salesperson</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="sales">Sales</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="sales/new">Record a Sale</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="customers">Customers</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="customers/new">Add a Customer</NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" aria-current="page" to="salesperson">Salesperson History</NavLink>
             </li>
           </ul>
         </div>

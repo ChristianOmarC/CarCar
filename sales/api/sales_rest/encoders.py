@@ -6,14 +6,17 @@ class SalespersonEncoder(ModelEncoder):
   model = Salesperson
   properties = [
     "id",
-    "name",
+    "first_name",
+    "last_name",
+    "employee_id",
   ]
 
 class CustomerEncoder(ModelEncoder):
   model = Customer
   properties = [
     "id",
-    "name",
+    "first_name",
+    "last_name",
     "address",
     "phone_number",
   ]
@@ -31,7 +34,7 @@ class SaleEncoder(ModelEncoder):
     "customer": CustomerEncoder(),
   }
 
-class AutomobileVO(ModelEncoder):
+class AutomobileVOEncoder(ModelEncoder):
   model = AutomobileVO
   properties = [
     "vin",

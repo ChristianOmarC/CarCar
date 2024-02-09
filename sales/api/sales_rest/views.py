@@ -6,7 +6,7 @@ from .encoders import (
   SalespersonEncoder,
   CustomerEncoder,
   SaleEncoder,
-  #AutomobileVOEncoder,
+  AutomobileVOEncoder,
 )
 import json
 
@@ -92,18 +92,16 @@ def api_customers(request):
       encoder=CustomerEncoder,
     )
   else:
+    content = json.loads(request.body)
     try:
-      content = json.loads(request.body)
       customer = Customer.objects.create(**content)
       return JsonResponse(
         customer,
         encoder=CustomerEncoder,
         safe=False
       )
-    except:
-      response = JsonResponse({"message": "Does not exist"})
-      response.status_code = 400
-      return response
+    except Customer.DoesNotExist:
+      return JsonResponse({"message": "Does not exist"}, status=400)
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])
@@ -159,22 +157,16 @@ def api_sales(request):
       encoder=SaleEncoder,
     )
   else:
+    content = json.loads(request.body)
     try:
-      content = json.loads(request.body)
-      sale = Sale.objects.create(**content)
-      automobile=content["automobile"],
-      salesperson=content["salesperson"],
-      customer=content["customer"],
-      price=content["price"],
+      sales = Sale.objects.create(**content)
       return JsonResponse(
-        sale,
+        sales,
         encoder=SaleEncoder,
         safe=False
       )
-    except:
-      response = JsonResponse({"message": "Does not exist"})
-      response.status_code = 400
-      return response
+    except Customer.DoesNotExist:
+      return JsonResponse({"message": "Does not exist"}, status=400)
 
 
 @require_http_methods(["GET", "PUT", "DELETE"])
@@ -246,3 +238,8 @@ def api_automobiles(request, pk):
       response = JsonResponse({"message": "Does not exist"})
       response.status_code = 400
       return response
+
+@require_http_methods(["GET", "POST"])
+def api_salesperson_history(request, pk):
+  if request.method == "GET":
+    salesperson_history = Salesperson.objects.get(id=pk).salesperson_history.all()

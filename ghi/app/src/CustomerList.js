@@ -19,23 +19,21 @@ function CustomerList() {
   }, []);
 
   const handleDelete = async (event) => {
-    event.preventDefault()
     const id = event.target.dataset.id
-    const url = `http://localhost:8090/api/customers/${id}/`
-    const fetchConfig = {method: 'DELETE'};
-    const response = await fetch(url, fetchConfig)
-    if (response.ok) {
-      fetchData();
-    } else {
-      alert('An error occurred while deleting the customer');
+
+    const fetchOption = { method: 'DELETE' }
+    const request = await fetch(`http://localhost:8090/api/customers/${id}/`, fetchOption)
+    if (request.ok) {
+        const data = await request.json()
+    fetchData()
     }
-};
+}
 
 
 return (
   <div className="my-5 container">
     <div className="row">
-    <h1>CustomerList</h1>
+    <h1>Customers</h1>
     <table className="table table-striped">
       <thead>
         <tr>
