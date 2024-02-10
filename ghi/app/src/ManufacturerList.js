@@ -32,30 +32,30 @@ function ManufacturerList() {
   };
 
 
-  return (
-    <div className="my-5 container">
+return (
+  <div className="my-5 container">
     <div className="row">
-      <h1>Manufacturer</h1>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-            {manufacturers.map(manufacturer => {
-                return (
-                  <tr key={manufacturer.id}>
-                    <td>{manufacturer.name}</td>
-                    <td><button onClick={handleDelete} data-id={manufacturer.id} className='btn btn-danger'>Delete</button></td>
-                  </tr>
-                );
-             })}
-        </tbody>
-      </table>
-      </div>
-      </div>
-    );
+    <h1>Manufacturer</h1>
+    <table className="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {manufacturers.map(manufacturer => {
+          return (
+            <tr key={manufacturer.id}>
+              <td>{manufacturer.name}</td>
+              <td><button onClick={handleDelete} data-id={manufacturer.id} className='btn btn-danger'>Delete</button></td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+    </div>
+  </div>
+);
 }
 export default ManufacturerList;

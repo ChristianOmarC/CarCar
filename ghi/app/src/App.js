@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
 import Nav from './Nav';
-import ManufacturerForm from './ManufacturerForm';
 import ManufacturerList from './ManufacturerList';
+import ManufacturerForm from './ManufacturerForm';
 import VehicleList from './VehicleList';
-import VehicleForm from './VehicleForm'
+import VehicleForm from './VehicleForm';
 import AutomobileList from './AutomobileList';
 import AutomobileForm from './AutomobileForm'
 import TechnicianList from './TechnicianList';
@@ -12,6 +12,14 @@ import TechnicianForm from './TechnicianForm';
 import AppointmentList from './AppointmentList';
 import AppointmentForm from './AppointmentForm';
 import ServiceHistory from './ServiceHistory';
+import AutomobileForm from './AutomobileForm';
+import SalespeopleList from './SalespeopleList';
+import SalespersonForm from './SalespersonForm';
+import CustomerList from './CustomerList';
+import CustomerForm from './CustomerForm';
+import SalesList from './SalesList';
+import SalesForm from './SalesForm';
+
 
 function App() {
   return (
@@ -42,6 +50,18 @@ function App() {
           </Route>
           <Route path="history">
             <Route path="" element={<ServiceHistory />} />
+          </Route>
+          <Route path="salespeople">
+            <Route path="" element={<SalespeopleList />} />
+            <Route path="new" element={<SalespersonForm />} />
+          </Route>
+          <Route path="sales">
+            <Route path="" element={<SalesList />} />
+            <Route path="new" element={<SalesForm />} />
+          </Route>
+          <Route path="customers">
+            <Route path="" element={<CustomerList />} />
+            <Route path="new" element={<CustomerForm />} />
           </Route>
           </Routes>
       </div>

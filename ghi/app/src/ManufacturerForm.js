@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 function ManufacturerForm() {
+  const [manufacturers, setManufacturers] = useState([]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -11,8 +12,6 @@ function ManufacturerForm() {
     const value = event.target.value;
     setFormData({...formData,[inputName]:value});
   }
-
-
 
   const handleSubmit = async (event) => {
     event.preventDefault();

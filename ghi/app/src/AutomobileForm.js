@@ -66,12 +66,12 @@ function AutomobileForm() {
             <div className="shadow p-4 mt-4">
               <h1>Add a New Automobile</h1>
               <form onSubmit={handleSubmit} id="create-automobile-form">
-    
+
                 <div className="form-floating mb-3">
                   <input onChange={handleFormChange} value={formData.color} placeholder="Color" required type="text" name="color" id="color" className="form-control" />
                   <label htmlFor="color">Color</label>
                 </div>
-    
+
                 <div className="form-floating mb-3">
                   <input onChange={handleFormChange} value={formData.year} placeholder="Year" required type="text" name="year" id="year" className="form-control" />
                   <label htmlFor="year">Year</label>
@@ -81,7 +81,7 @@ function AutomobileForm() {
                   <input onChange={handleFormChange} value={formData.vin} placeholder="Vin" required type="text" name="vin" id="vin" className="form-control" />
                   <label htmlFor="vin">Vin</label>
                 </div>
-    
+
                 <div className="mb-3">
                   <select onChange={handleFormChange} value={formData.model_id} required name="model_id" id="model_id" className="form-select">
                     <option value="">Choose a Model</option>
