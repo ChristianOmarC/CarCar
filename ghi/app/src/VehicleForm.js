@@ -15,6 +15,8 @@ function VehicleForm() {
         if (response.ok) {
           const data = await response.json();
           setManufacturer(data.manufacturers);
+        } else {
+          alert('An error occurred fetching the data');
         }
       }
 

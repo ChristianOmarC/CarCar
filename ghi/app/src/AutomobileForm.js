@@ -16,6 +16,8 @@ function AutomobileForm() {
         if (response.ok) {
             const data = await response.json()
             setModels(data.models)
+        } else {
+          alert('An error occurred while fetching the data');
         }
     }
 
