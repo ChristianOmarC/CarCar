@@ -119,17 +119,10 @@ def api_customer(request, pk):
       response.status_code = 404
       return response
   elif request.method == "DELETE":
-    try:
-      customer = Customer.objects.get(id=pk)
-      customer.delete()
-      return JsonResponse(
-        customer,
-        encoder=CustomerEncoder,
-        safe=False
-      )
-    except Customer.DoesNotExist:
-      return JsonResponse({"message": "Does not exist"})
+      count, _ = Customer.objects.filter(id=pk).delete()
+      return JsonResponse({"deleted": count > 0})
   else:
+
     try:
       content = json.loads(request.body)
       customer = Customer.objects.get(id=pk)

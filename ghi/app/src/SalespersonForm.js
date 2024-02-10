@@ -14,7 +14,7 @@ function SalespersonForm() {
         const response = await fetch(url)
         if (response.ok) {
             const data = await response.json()
-            setSalesperson(data.setsalesperson)
+            setSalesperson(data.salesperson)
         }
     }
 
