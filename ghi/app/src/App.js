@@ -12,7 +12,6 @@ import TechnicianForm from './TechnicianForm';
 import AppointmentList from './AppointmentList';
 import AppointmentForm from './AppointmentForm';
 import ServiceHistory from './ServiceHistory';
-import AutomobileForm from './AutomobileForm';
 import SalespeopleList from './SalespeopleList';
 import SalespersonForm from './SalespersonForm';
 import CustomerList from './CustomerList';
